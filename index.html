@@ -1,0 +1,122 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Media Template</title>
+<meta charset = "UTF-8"/>
+<meta name="description" content="Types of medias to use.">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>TYPES OF MEDIA</h1>
+</header>
+
+<article>
+<section>
+<h2>Animation</h2>
+<p>
+<img class="zencolor" src="images/animation.jpg" alt="Picture of butterfly">
+One type of media is animation. We can convey many thoughts using animation that
+we would not be able to any other way. Animation uses the imagination like
+nothing else.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Cinema</h2>
+<img class="filmreel" src="images/video.jpg" alt="Picture of a reel with film.">
+<p>Another form of media is film. There are both fiction and nonfiction forms of cinema.
+One can tell their version of the truth using film without fear of being interupteed.
+One can also tell a story they created for the enjoyment of all who care to take it in.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Thunderstorm</h2>
+<audio controls>
+<source src="audio/thunderstorm.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>Thunderstorms! The sound of rain hitting our surroundings. The clap of thunder 
+followed by a flash of lightning. Some people fear them. I find them relaxing. So much
+so, that I have an app that will play the thunderstorm while I doze off into dream land.
+Many apps and videos provide this soothing sound. One such app is White Noise - Lite.
+<hr/>
+</section>
+
+<section id="slideshow">
+<h2>Slideshow</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 2</div>
+  <img src="images/animation.jpg" style="width:100%">
+  <div class="text">Zen Color</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 2</div>
+  <img src="images/video.jpg" style="width:100%">
+  <div class="text">Cinema</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+<hr/>
+</section>
+
+<section>
+<h2>How to use computer animation.</h2>
+<div class="video_container">
+<iframe src="https://www.youtube.com/embed/pF--YKCCUMw?si=wmpUAIXN6NTLdTKc"></iframe>
+</div>
+<hr/>
+</section>
+</article>
+
+<footer>
+<p>This page was created by Lynnette &copy; 2023</p>
+</footer>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
